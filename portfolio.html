@@ -41,35 +41,162 @@
             --light-color: #f8fafc;
             --dark-color: #0f172a;
             --code-bg: #1a1b26;
+            --text-light: #1e293b;
+            --text-dark: #f1f5f9;
+            --card-bg-light: #ffffff;
+            --card-bg-dark: #1e293b;
+            --card-bg-darker: #0f172a;
         }
         
         [data-theme="dark"] {
             --light-color: #0f172a;
             --dark-color: #f8fafc;
             --code-bg: #2d3748;
+            --text-light: #f1f5f9; /* Texte clair en mode sombre */
+            --text-dark: #cbd5e1; /* Texte secondaire clair */
+            --card-bg-light: #1e293b;
+            --card-bg-dark: #0f172a;
         }
         
-        [data-theme="dark"] .skills,
+        /* Corriger la couleur du texte pour tout le body */
+        [data-theme="dark"] body {
+            color: var(--text-dark) !important;
+        }
+        
+        /* Section About */
+        [data-theme="dark"] .about {
+            background-color: var(--card-bg-darker) !important;
+            color: var(--text-dark) !important;
+        }
+        
+        [data-theme="dark"] .about h3,
+        [data-theme="dark"] .about p,
+        [data-theme="dark"] .about strong {
+            color: var(--text-dark) !important;
+        }
+        
+        /* Section Skills */
+        [data-theme="dark"] .skills {
+            background-color: var(--card-bg-darker) !important;
+            color: var(--text-dark) !important;
+        }
+        
+        [data-theme="dark"] .skills h2,
+        [data-theme="dark"] .skill-item span {
+            color: var(--text-dark) !important;
+        }
+        
+        /* Section Portfolio */
+        [data-theme="dark"] .portfolio {
+            background-color: var(--card-bg-darker) !important;
+        }
+        
+        [data-theme="dark"] .portfolio-item {
+            background: var(--card-bg-dark) !important;
+            color: var(--text-dark) !important;
+        }
+        
+        [data-theme="dark"] .portfolio-info h4,
+        [data-theme="dark"] .portfolio-info p {
+            color: var(--text-dark) !important;
+        }
+        
+        [data-theme="dark"] .tech-tag {
+            background: #2d3748 !important;
+            color: var(--accent-color) !important;
+        }
+        
+        /* Section Education */
         [data-theme="dark"] .education {
-            background-color: #1e293b;
+            background-color: var(--card-bg-darker) !important;
+            color: var(--text-dark) !important;
         }
         
-        [data-theme="dark"] .portfolio-item,
         [data-theme="dark"] .timeline-content {
-            background: #1e293b;
-            color: #f8fafc;
+            background: var(--card-bg-dark) !important;
+            color: var(--text-dark) !important;
+            border: 1px solid #2d3748 !important;
         }
         
+        [data-theme="dark"] .timeline-content h4 {
+            color: var(--text-light) !important;
+        }
+        
+        [data-theme="dark"] .timeline-content .text-muted {
+            color: #94a3b8 !important; /* Gris plus clair */
+        }
+        
+        /* Code Snippet */
+        [data-theme="dark"] .code-snippet {
+            background: var(--code-bg) !important;
+            color: #a9b1d6 !important;
+        }
+        
+        /* Formulaires */
         [data-theme="dark"] .form-control {
-            background-color: #2d3748;
-            border-color: #4a5568;
-            color: #f8fafc;
+            background-color: #2d3748 !important;
+            border-color: #4a5568 !important;
+            color: var(--text-dark) !important;
+        }
+        
+        [data-theme="dark"] .form-control::placeholder {
+            color: #94a3b8 !important;
+        }
+        
+        [data-theme="dark"] .contact-form {
+            background-color: var(--card-bg-dark) !important;
+            color: var(--text-dark) !important;
+        }
+        
+        /* Modal */
+        [data-theme="dark"] .modal-content {
+            background-color: var(--card-bg-dark) !important;
+            color: var(--text-dark) !important;
+        }
+        
+        [data-theme="dark"] .modal-body h6,
+        [data-theme="dark"] .modal-body p,
+        [data-theme="dark"] .modal-body li {
+            color: var(--text-dark) !important;
+        }
+        
+        [data-theme="dark"] .badge.bg-primary {
+            background-color: var(--primary-color) !important;
+        }
+        
+        /* Footer */
+        [data-theme="dark"] footer {
+            background-color: #111827 !important;
+            color: var(--text-dark) !important;
+        }
+        
+        [data-theme="dark"] .code-font {
+            color: #94a3b8 !important;
+        }
+        
+        /* Typing text */
+        [data-theme="dark"] .typing-text {
+            color: var(--accent-color) !important;
+        }
+        
+        /* Counter */
+        [data-theme="dark"] .counter {
+            color: var(--accent-color) !important;
+        }
+        
+        [data-theme="dark"] .counter-item p {
+            color: #94a3b8 !important;
+        }
+        
+        /* Skill bars */
+        [data-theme="dark"] .skill-bar {
+            background-color: #2d3748 !important;
         }
         
         body {
             font-family: 'Poppins', sans-serif;
             line-height: 1.6;
-            color: #333;
+            color: var(--text-light);
             overflow-x: hidden;
             background-color: var(--light-color);
             transition: background-color 0.3s ease, color 0.3s ease;
@@ -81,6 +208,16 @@
         
         h1, h2, h3, h4, h5, h6 {
             font-weight: 600;
+            color: var(--text-light);
+        }
+        
+        [data-theme="dark"] h1,
+        [data-theme="dark"] h2,
+        [data-theme="dark"] h3,
+        [data-theme="dark"] h4,
+        [data-theme="dark"] h5,
+        [data-theme="dark"] h6 {
+            color: var(--text-light) !important;
         }
         
         .navbar {
@@ -287,6 +424,11 @@
             text-align: center;
             margin-bottom: 60px;
             position: relative;
+            color: var(--text-light);
+        }
+        
+        [data-theme="dark"] .section-title {
+            color: var(--text-light) !important;
         }
         
         .section-title:after {
@@ -303,6 +445,7 @@
         .about {
             padding: 100px 0;
             background-color: var(--light-color);
+            color: var(--text-light);
         }
         
         .profile-img-container {
@@ -346,7 +489,7 @@
             align-items: center;
             justify-content: center;
             font-weight: 600;
-            color: var(--dark-color);
+            color: var(--text-light);
             z-index: 1;
         }
         
@@ -361,12 +504,9 @@
         
         .skills {
             padding: 100px 0;
-            background-color: white;
-            transition: background-color 0.3s ease;
-        }
-        
-        [data-theme="dark"] .skills {
-            background-color: #1e293b;
+            background-color: var(--card-bg-light);
+            transition: background-color 0.3s ease, color 0.3s ease;
+            color: var(--text-light);
         }
         
         .skill-item {
@@ -377,6 +517,10 @@
             display: flex;
             justify-content: space-between;
             margin-bottom: 10px;
+        }
+        
+        .skill-name span {
+            color: var(--text-light);
         }
         
         .skill-bar {
@@ -420,6 +564,7 @@
         .portfolio {
             padding: 100px 0;
             background-color: var(--light-color);
+            color: var(--text-light);
         }
         
         .portfolio-filters {
@@ -437,7 +582,8 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.08);
             transition: all 0.3s ease;
             position: relative;
-            background: white;
+            background: var(--card-bg-light);
+            color: var(--text-light);
         }
         
         .portfolio-item::before {
@@ -503,17 +649,18 @@
         }
         
         .tech-tag {
-            background: var(--light-color);
+            background: #e2e8f0;
             padding: 4px 10px;
             border-radius: 20px;
             font-size: 0.8rem;
-            color: var(--dark-color);
+            color: var(--text-light);
         }
         
         .education {
             padding: 100px 0;
-            background-color: white;
-            transition: background-color 0.3s ease;
+            background-color: var(--card-bg-light);
+            transition: background-color 0.3s ease, color 0.3s ease;
+            color: var(--text-light);
         }
         
         .timeline {
@@ -573,6 +720,11 @@
             border-radius: 8px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             transition: background-color 0.3s ease, color 0.3s ease;
+            color: var(--text-light);
+        }
+        
+        .timeline-content .text-muted {
+            color: #64748b !important;
         }
         
         .contact {
@@ -589,7 +741,7 @@
             transform: translateY(50px);
             opacity: 0;
             transition: all 0.8s ease;
-            color: var(--dark-color);
+            color: var(--text-light);
         }
         
         .contact-form.animated {
@@ -603,6 +755,7 @@
             border: 1px solid #ddd;
             border-radius: 5px;
             transition: all 0.3s ease;
+            color: var(--text-light);
         }
         
         .form-control:focus {
@@ -738,6 +891,10 @@
         .counter-item {
             text-align: center;
             padding: 20px;
+        }
+        
+        .counter-item p {
+            color: #64748b;
         }
         
         .code-snippet {
@@ -956,13 +1113,13 @@
                         <div class="row">
                             <div class="col-sm-6">
                                 <p><strong>Nom:</strong> RANAIVOARILALAO Mahenintsoa</p>
-                                <p><strong>Téléphone:</strong> +261 34 70 949 97</p>
+                                <p><strong>Téléphone:</strong> +261 34 70 949 97 / +261 32 99 516 57</p>
                                 <p><strong>Ville:</strong> Antananarivo</p>
                             </div>
                             <div class="col-sm-6">
                                 <p><strong>Email:</strong> mahenintsoatrade@email.com</p>
                                 <p><strong>Formation:</strong> Licence Informatique</p>
-                                <p><strong>Disponibilité:</strong> Tout de suite</p>
+                                <p><strong>Disponibilité:</strong> Immédiate</p>
                             </div>
                         </div>
                     </div>
@@ -1033,26 +1190,9 @@
                             <div class="skill-level" data-width="70%"></div>
                         </div>
                     </div>
-                    <div class="skill-item" data-aos="fade-right">
-                        <div class="skill-name">
-                            <span>Symfony</span>
-                            <span>68%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-level" data-width="68%"></div>
-                        </div>
-                    </div>
+                   
                 </div>
                 <div class="col-md-6">
-                    <div class="skill-item" data-aos="fade-left" data-aos-delay="300">
-                        <div class="skill-name">
-                            <span>Node.js</span>
-                            <span>70%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-level" data-width="70%"></div>
-                        </div>
-                    </div>
                     <div class="skill-item" data-aos="fade-left" data-aos-delay="400">
                         <div class="skill-name">
                             <span>PHP/MySQL</span>
@@ -1071,6 +1211,15 @@
                             <div class="skill-level" data-width="50%"></div>
                         </div>
                     </div>
+                    <div class="skill-item" data-aos="fade-right">
+                        <div class="skill-name">
+                            <span>Symfony</span>
+                            <span>68%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" data-width="68%"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
             
@@ -1081,7 +1230,7 @@
                         <span class="code-keyword">const</span> <span class="code-function">developer</span> = {<br>
                         &nbsp;&nbsp;name: <span class="code-string">"RANAIVOARILALAO Mahenintsoa"</span>,<br>
                         &nbsp;&nbsp;title: <span class="code-string">"Étudiant en Informatique"</span>,<br>
-                        &nbsp;&nbsp;skills: [<span class="code-string">"Symfony"</span>, <span class="code-string">"React"</span>, <span class="code-string">"Node.js"</span>, <span class="code-string">"PHP"</span>],<br>
+                        &nbsp;&nbsp;skills: [<span class="code-string">"Symfony"</span>, <span class="code-string">"React"</span>, <span class="code-string">"PHP"</span>],<br>
                         &nbsp;&nbsp;passion: <span class="code-string">"Créer des applications web innovantes"</span><br>
                         };<br>
                         <br>
@@ -1112,23 +1261,23 @@
             <div class="row" id="portfolio-grid">
                 <!-- Projet 1 -->
                 <div class="col-md-4 portfolio-card" data-category="web">
-                    <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="200">
                         <div class="portfolio-img">
-                            Application E-commerce
+                            <img src="image/portf.png" alt="PhotoMahenintsoa" style="width: 95%; height: 95%; border-radius: 0%; object-fit: cover;">
+                            
                             <div class="portfolio-overlay">
-                                <button class="btn btn-light view-project" data-project="1">Voir les détails</button>
+                                <button class="btn btn-light view-project" data-project="2">Voir les détails</button>
                             </div>
                         </div>
                         <div class="portfolio-info">
-                            <h4>ShopTech</h4>
-                            <p>Plateforme e-commerce développée avec React et Node.js avec système de paiement et gestion de stock.</p>
+                            <h4>Portfolio</h4>
+                            <p></p>
                             <div class="portfolio-tech">
-                                <span class="tech-tag">React</span>
-                                <span class="tech-tag">Node.js</span>
-                                <span class="tech-tag">MongoDB</span>
-                                <span class="tech-tag">Stripe</span>
+                                 <span class="tech-tag">HTML/CSS/JS</span>
+                                <span class="tech-tag">Bootstrap</span>
+                                
                             </div>
-                            <button class="btn btn-sm btn-primary mt-3 view-project" data-project="1">Voir le projet</button>
+                            <button class="btn btn-sm btn-primary mt-3 view-project" data-project="2">Voir le projet</button>
                         </div>
                     </div>
                 </div>
@@ -1136,7 +1285,7 @@
                 <div class="col-md-4 portfolio-card" data-category="web">
                     <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="200">
                         <div class="portfolio-img">
-                            Application Météo
+                            Gestion des matérielles
                             <div class="portfolio-overlay">
                                 <button class="btn btn-light view-project" data-project="2">Voir les détails</button>
                             </div>
@@ -1158,29 +1307,30 @@
                 <div class="col-md-4 portfolio-card" data-category="web">
                     <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="300">
                         <div class="portfolio-img">
-                            Réseau Social
+                            Journal trading by FX Hent
                             <div class="portfolio-overlay">
                                 <button class="btn btn-light view-project" data-project="3">Voir les détails</button>
                             </div>
                         </div>
                         <div class="portfolio-info">
-                            <h4>ConnectEtud</h4>
-                            <p>Réseau social pour étudiants avec messagerie, groupes et partage de documents.</p>
+                            <h4>Journaltrading by Fx Hent</h4>
+                            <p>Journal de trading , pour gérer efficacement les entré et le sortie d'un position a placé.</p>
                             <div class="portfolio-tech">
+                                <span class="tech-tag">HTML/CSS/JS</span>
+                                <span class="tech-tag">Bootstrap</span>
                                 <span class="tech-tag">PHP</span>
                                 <span class="tech-tag">MySQL</span>
-                                <span class="tech-tag">jQuery</span>
-                                <span class="tech-tag">AJAX</span>
                             </div>
                             <button class="btn btn-sm btn-primary mt-3 view-project" data-project="3">Voir le projet</button>
                         </div>
                     </div>
                 </div>
+                <!-- Projet 5 -->
                 <div class="col-md-4 portfolio-card" data-category="web">
                     <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="200">
                         <div class="portfolio-img" > 
                             <img src="image/vote.png" alt="PhotoMahenintsoa" style="width: 95%; height: 95%; border-radius: 0%; object-fit: cover;">
-                            Application de vote
+                            
                             <div class="portfolio-overlay">
                                 <button class="btn btn-light view-project" data-project="4">Voir les détails</button>
                             </div>
@@ -1203,15 +1353,14 @@ aux electeurs d'exprimer leur suffrage depuis n'importe quel lieu.</p>
                     <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="300">
                         <div class="portfolio-img">
                             <img src="image/infrastructure.png" alt="Infrastructure" style="width: 95%; height: 95%; border-radius: 0%; object-fit: cover;">
-                            Gestion des infrastructures MPS
-
+                        
                             <div class="portfolio-overlay">
                                 <button class="btn btn-light view-project" data-project="5">Voir les détails</button>
                             </div>
                         </div>
                         <div class="portfolio-info">
                             <h4>Géstion des infrastructures</h4>
-                            <p>Un appicaion de gestion des infrastructures au sein de Ministères de la Population et des Solidarités.</p>
+                            <p>Application Web de gestion des infrastructures au sein de Ministères de la Population et des Solidarités.</p>
                             <div class="portfolio-tech">
                                 <span class="tech-tag">Symfony</span>
                                 <span class="tech-tag">PHP</span>
@@ -1235,23 +1384,23 @@ aux electeurs d'exprimer leur suffrage depuis n'importe quel lieu.</p>
                     <div class="timeline-content">
                         <h4>Licence Informatique</h4>
                         <p class="text-muted">Oniversity FJKM Ravelojaona Ampandrana | 2022 - 2025</p>
-                        <p>Spécialisation en développement web et bases de données. Cours en algorithmique, structures de données, réseaux et développement d'applications.</p>
+                        <p>Passionné en développement web et bases de données. Cours en algorithmique, structures de données, réseaux et développement d'applications.</p>
                     </div>
                 </div>
                 <div class="timeline-item" data-aos="fade-left">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <h4>Bacc serie OSE</h4>
-                        <p class="text-muted">Lycée Ambohimanambola, Antananarivo |2021</p>
-                        <p>Option Série OSE, spécialité Informatique et Sciences du Numérique. Mention Passable.</p>
+                        <h4>Baccalauréat serie OSE</h4>
+                        <p class="text-muted">Lycée Ambohimanambola, Antananarivo |2021-2022</p>
+                        <p>Option Série OSE.</p>
                     </div>
                 </div>
                 <div class="timeline-item" data-aos="fade-right">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <h4>Certification Développeur Web</h4>
-                        <p class="text-muted">OpenClassrooms | 2021</p>
-                        <p>Formation intensive en développement front-end et back-end. Projets pratiques incluant la création de sites responsives et d'applications web.</p>
+                        <h4>Certification </h4>
+                        <p class="text-muted">Groupe FAMENO Madagascar | 2021</p>
+                        <p>Formation en traitement en word excel, power Point.</p>
                     </div>
                 </div>
             </div>
