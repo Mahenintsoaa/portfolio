@@ -1635,6 +1635,70 @@
             margin-bottom: 0;
         }
     }
+
+    /* Styles pour le nom responsive */
+.desktop-only {
+    display: block;
+}
+
+.mobile-only {
+    display: none;
+}
+
+/* Ajustements pour mobile */
+@media (max-width: 768px) {
+    .desktop-only {
+        display: none;
+    }
+    
+    .mobile-only {
+        display: block;
+    }
+    
+    .hero h1 {
+        font-size: 2rem !important;
+        line-height: 1.2;
+    }
+    
+    .typewriter {
+        font-size: 1.1em;
+        white-space: normal;
+        overflow: visible;
+        border-right: none;
+        animation: none;
+        display: inline;
+    }
+    
+    .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+    
+    .hero-buttons .btn {
+        margin-right: 0 !important;
+        width: 100%;
+        max-width: 280px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero h1 {
+        font-size: 1.8rem !important;
+        padding: 0 10px;
+    }
+    
+    .typewriter {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 400px) {
+    .hero h1 {
+        font-size: 1.6rem !important;
+    }
+}
 </style>
 </head>
 <body>
@@ -1681,7 +1745,7 @@
             <!-- Floating elements will be added via JavaScript -->
         </div>
         <div class="container hero-content">
-            <h1>Je suis <span class="typewriter">RANAIVOARILALAO <br>Mahenintsoa <br> </span></h1>
+            <h1>Je suis <span class="typewriter">RANAIVOARILALAO Mahenintsoa  </span></h1>
             <div class="typing-container">
                 <div class="typing-text" id="typing-text"></div>
             </div>
